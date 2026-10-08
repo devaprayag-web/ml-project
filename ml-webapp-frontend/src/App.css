@@ -1,0 +1,380 @@
+.app {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 40px 0 120px;
+}
+
+.masthead {
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--slate-light);
+  padding: 0 0 20px;
+}
+
+.masthead h1 {
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+
+.masthead p {
+  color: var(--slate);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 60ch;
+}
+
+/* --- Step layout: numbered steps down the left edge --- */
+
+.step {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.step-marker-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+  background: var(--paper);
+}
+
+.step-number.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: white;
+}
+
+.step-number.done {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.step-connector {
+  width: 1.5px;
+  flex: 1;
+  background: var(--slate-light);
+  margin-top: 4px;
+  min-height: 24px;
+}
+
+.step-body {
+  min-width: 0;
+  padding-bottom: 24px;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  padding-top: 4px;
+}
+
+.step-subtitle {
+  color: var(--slate);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* --- Panels (replaces generic rounded cards) --- */
+
+.panel {
+  border: 1px solid var(--slate-light);
+  background: var(--surface);
+  padding: 24px;
+}
+
+.panel + .panel {
+  margin-top: 16px;
+}
+
+/* --- Upload dropzone --- */
+
+.dropzone {
+  border: 1.5px dashed var(--slate);
+  padding: 40px 24px;
+  text-align: center;
+  background: var(--surface);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.dropzone.dragging {
+  border-color: var(--teal);
+  background: #EEF5F3;
+}
+
+.dropzone p {
+  margin: 0 0 12px;
+  color: var(--slate);
+  font-size: 14px;
+}
+
+/* --- Buttons --- */
+
+.btn {
+  border: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--paper);
+}
+
+/* --- Data tables --- */
+
+.data-table {
+  font-size: 13px;
+}
+
+.data-table th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: lowercase;
+  color: var(--slate);
+  border-bottom: 1.5px solid var(--ink);
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--slate-light);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.data-table tbody tr:hover {
+  background: var(--paper);
+}
+
+.scroll-x {
+  overflow-x: auto;
+}
+
+/* --- Form controls --- */
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.field select,
+.field input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--slate-light);
+  background: var(--surface);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.field-hint {
+  font-size: 12px;
+  color: var(--slate);
+  margin-top: 6px;
+}
+
+.algo-options {
+  display: grid;
+  gap: 8px;
+}
+
+.algo-option {
+  border: 1.5px solid var(--slate-light);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.algo-option.selected {
+  border-color: var(--teal);
+  background: #EEF5F3;
+}
+
+.algo-option input {
+  accent-color: var(--teal);
+}
+
+.algo-option .algo-type {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--slate);
+}
+
+/* --- Notices --- */
+
+.notice {
+  padding: 12px 14px;
+  border-left: 3px solid var(--ochre);
+  background: #FBF3E9;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.notice-error {
+  border-left-color: var(--danger);
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.notice-info {
+  border-left-color: var(--teal-dark);
+  background: #EAF2F1;
+  color: var(--ink, inherit);
+}
+
+.notice-info div + div {
+  margin-top: 4px;
+}
+
+/* --- Metrics --- */
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1px;
+  background: var(--slate-light);
+  border: 1px solid var(--slate-light);
+  margin-bottom: 24px;
+}
+
+.tuned-params-badge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--slate-light);
+  border-left: 3px solid var(--teal-dark);
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.tuned-params-title {
+  font-weight: 600;
+  color: var(--slate);
+  margin-right: 4px;
+}
+
+.tuned-params-chip {
+  font-family: var(--font-mono);
+  background: var(--slate-light);
+  padding: 3px 8px;
+  border-radius: 3px;
+  color: var(--ink, inherit);
+}
+
+.metric-box {
+  background: var(--surface);
+  padding: 16px;
+}
+
+.metric-value {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--teal-dark);
+}
+
+.metric-label {
+  font-size: 11px;
+  color: var(--slate);
+  text-transform: lowercase;
+  margin-top: 4px;
+}
+
+.section-heading {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 32px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--slate-light);
+}
+
+.section-heading:first-child {
+  margin-top: 0;
+}
+
+/* --- Confusion matrix --- */
+
+.confusion-matrix {
+  display: inline-block;
+  border: 1px solid var(--ink);
+}
+
+.confusion-matrix table {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.confusion-matrix th, .confusion-matrix td {
+  padding: 10px 16px;
+  text-align: center;
+  border: 1px solid var(--slate-light);
+}
+
+.confusion-matrix .cm-header {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 11px;
+}
+
+.confusion-matrix .cm-axis-label {
+  font-size: 11px;
+  color: var(--slate);
+  font-family: var(--font-sans);
+}
+
+.loading-text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--slate);
+}
